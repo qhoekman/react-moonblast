@@ -11,6 +11,7 @@
     "@types/react": "16.8.14",
     "@types/react-dom": "16.8.4",
     "emotion-theming": "^10.0.10",
+    "polished": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
