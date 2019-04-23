@@ -14,6 +14,7 @@
     "polished": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-icons": "^3.6.1",
     "react-scripts": "2.1.8",
     "react-tailwhip": "^0.0.2",
     "typescript": "3.4.4"
