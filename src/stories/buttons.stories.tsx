@@ -4,11 +4,12 @@ import React from 'react';
 import Theme from 'react-tailwhip';
 import { Color } from 'react-tailwhip/dist/theme';
 
-import PrimaryButton from '../buttons/PrimaryButton';
+import PrimaryButton, { Round } from '../buttons/PrimaryButton';
 import SecondaryButton from '../buttons/SecondaryButton';
 import TertiaryButton from '../buttons/TertiaryButton';
 
 const Colors = Object.keys(Theme.colors) as Color[];
+const Rounded = ['sm', 'md', 'full'] as Round[];
 
 storiesOf('Button', module)
   .add(
@@ -18,6 +19,7 @@ storiesOf('Button', module)
         fullSize={boolean('fullSize', false)}
         ripple={boolean('ripple', true)}
         disabled={boolean('disabled', false)}
+        rounded={select<Round>('rounded', Rounded, 'md')}
         color={select<Color>('color', Colors, 'tealLight')}
         background={select<Color>('background', Colors, 'black')}
       >
@@ -32,6 +34,7 @@ storiesOf('Button', module)
       <SecondaryButton
         fullSize={boolean('fullSize', false)}
         ripple={boolean('ripple', true)}
+        rounded={select<Round>('rounded', Rounded, 'md')}
         disabled={boolean('disabled', false)}
         color={select('color', Colors, 'tealLight')}
       >
@@ -46,6 +49,7 @@ storiesOf('Button', module)
       <TertiaryButton
         fullSize={boolean('fullSize', false)}
         ripple={boolean('ripple', true)}
+        rounded={select<Round>('rounded', Rounded, 'md')}
         disabled={boolean('disabled', false)}
         color={select('color', Colors, 'tealLight')}
       >

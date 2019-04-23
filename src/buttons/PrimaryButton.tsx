@@ -4,12 +4,14 @@ import { Color } from 'react-tailwhip/dist/theme';
 
 import { Styled } from '../Styled';
 
+export type Round = 'sm' | 'md' | 'full';
 interface IProps {
   color: Color;
   background?: Color;
   disabled?: boolean;
   fullSize?: boolean;
   ripple?: boolean;
+  rounded?: Round;
 }
 const DefaultColor = 'transparent' as Color;
 
@@ -41,6 +43,13 @@ const PrimaryButton = Styled<'a', IProps>('a')(
         color: desaturate(1, theme.colors[color]),
         pointerEvents: 'none',
         cursor: 'default'
+      };
+    }
+  },
+  ({ theme, rounded }) => {
+    if (rounded) {
+      return {
+        borderRadius: theme.borderRadius[rounded]
       };
     }
   },
