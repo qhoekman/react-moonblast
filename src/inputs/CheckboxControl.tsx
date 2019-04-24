@@ -68,7 +68,10 @@ const Control = Styled<'span', IProps>('span')(
     if (disabled) {
       return {
         backgroundColor: theme.colors.greyLight,
-        borderColor: theme.colors.greyLighter
+        borderColor: theme.colors.greyLighter,
+        '&::after': {
+          borderColor: theme.colors.greyDarker
+        }
       };
     }
   }
