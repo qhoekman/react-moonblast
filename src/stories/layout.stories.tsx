@@ -8,18 +8,18 @@ import Paper from '../layout/Paper';
 
 const Colors = Object.keys(Theme.colors);
 
-storiesOf('Layout', module)
+storiesOf("Layout", module)
   .add(
-    'Diagonal Hero',
+    "Diagonal Hero",
     () => (
       <>
-        <DiagonalHero background={'greyLighter'}>
+        <DiagonalHero background={"greyLighter"}>
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eum sed eligendi! Maxime, minima explicabo
             obcaecati quas a mollitia velit possimus nobis rerum dolores nam nihil voluptas. Cupiditate, officia ipsa.
           </div>
         </DiagonalHero>
-        <DiagonalHero background={'greyLight'}>
+        <DiagonalHero background={"white"}>
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eum sed eligendi! Maxime, minima explicabo
             obcaecati quas a mollitia velit possimus nobis rerum dolores nam nihil voluptas. Cupiditate, officia ipsa.
@@ -30,19 +30,19 @@ storiesOf('Layout', module)
     { info: { inline: true } }
   )
   .add(
-    'Paper',
+    "Paper",
     () => (
       <div
         style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'lightgrey',
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "lightgrey",
           maxWidth: 768,
-          margin: '0 auto'
+          margin: "0 auto"
         }}
       >
-        <Paper elevation={select('elevation', ['sm', 'md', 'lg'], 'sm')} rounded={boolean('rounded', true)}>
+        <Paper elevation={select("elevation", ["sm", "md", "lg"], "sm")} rounded={boolean("rounded", true)}>
           <div>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eum sed eligendi! Maxime, minima explicabo
             obcaecati quas a mollitia velit possimus nobis rerum dolores nam nihil voluptas. Cupiditate, officia ipsa.
