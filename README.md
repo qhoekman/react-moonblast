@@ -4,4 +4,4 @@
 
 # Moonblast
 
-Personal components showcase using `react-tailwind` for theming.
+Personal components showcase using `react-tailwhip` for theming.
