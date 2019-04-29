@@ -1,4 +1,5 @@
 import { withKnobs } from '@storybook/addon-knobs';
+import 'storybook-chromatic';
 import { addDecorator, configure } from '@storybook/react';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
