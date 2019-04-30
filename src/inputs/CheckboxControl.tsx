@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Styled } from '../Styled';
 
@@ -90,11 +90,17 @@ const Flex = Styled('label')(({ theme }) => ({
   display: 'flex'
 }));
 
-const Checkbox: React.FC<IProps> = ({ checked, disabled }) => {
+const Checkbox: React.FC<IProps> = ({ checked: propChecked, disabled }) => {
+  const [checked, setChecked] = useState(propChecked);
   return (
     <Flex role="checkbox">
       <Control checked={checked} disabled={disabled} />
-      <OriginalControl type="checkbox" checked={checked} disabled={disabled} />
+      <OriginalControl
+        type="checkbox"
+        onChange={e => setChecked(e.target.checked)}
+        checked={checked}
+        disabled={disabled}
+      />
       <Label checked={checked} disabled={disabled}>
         Label
       </Label>

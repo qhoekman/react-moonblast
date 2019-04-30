@@ -6,7 +6,7 @@ import { Color } from 'react-tailwhip/dist/theme';
 
 import CheckboxControl from '../inputs/CheckboxControl';
 import { InputControl } from '../inputs/InputControl';
-import TextareaControl from '../inputs/TextareaControl';
+import { TextareaControl } from '../inputs/TextareaControl';
 
 const Colors = Object.keys(Theme.colors) as Color[];
 
