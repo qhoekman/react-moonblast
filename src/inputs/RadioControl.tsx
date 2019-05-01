@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Styled } from '../Styled';
 
@@ -95,6 +95,12 @@ const Flex = Styled('label')(({ theme }) => ({
 
 const Radio: React.FC<IPropsOuter> = ({ checked: propChecked, disabled, label }) => {
   const [checked, setChecked] = useState(propChecked);
+
+  useEffect(() => {
+    return () => {
+      setChecked(!propChecked);
+    };
+  }, [propChecked]);
   return (
     <Flex role="radio">
       <Control checked={checked} disabled={disabled} />
