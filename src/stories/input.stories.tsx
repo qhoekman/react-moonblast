@@ -6,6 +6,7 @@ import { Color } from 'react-tailwhip/dist/theme';
 
 import CheckboxControl from '../inputs/CheckboxControl';
 import { InputControl } from '../inputs/InputControl';
+import RadioControl from '../inputs/RadioControl';
 import { TextareaControl } from '../inputs/TextareaControl';
 
 const Colors = Object.keys(Theme.colors) as Color[];
@@ -42,6 +43,21 @@ storiesOf('Inputs', module)
     () => (
       <div style={{ width: 300 }}>
         <CheckboxControl checked={boolean('checked', true)} disabled={boolean('disabled', false)} />
+      </div>
+    ),
+    {
+      info: { inline: true }
+    }
+  )
+  .add(
+    'Radio control',
+    () => (
+      <div style={{ width: 300 }}>
+        <RadioControl
+          checked={boolean('checked', false)}
+          disabled={boolean('disabled', false)}
+          label={text('label', 'Label')}
+        />
       </div>
     ),
     {
