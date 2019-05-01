@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 
 import { Styled } from '../Styled';
 
-interface IProps {
+interface IPropsOuter extends IPropsInner {
+  label: string;
+}
+
+interface IPropsInner {
   checked?: boolean;
   disabled?: boolean;
 }
-const Label = Styled<'span', IProps>('span')(
+
+const Label = Styled<'span', IPropsInner>('span')(
   ({ theme }) => ({
     fontSize: theme.fontSizes.sm,
     lineHeight: theme.leading.tight,
@@ -28,7 +33,7 @@ const Label = Styled<'span', IProps>('span')(
   }
 );
 
-const Control = Styled<'span', IProps>('span')(
+const Control = Styled<'span', IPropsInner>('span')(
   ({ theme }) => ({
     display: 'inline-block',
     position: 'relative',
@@ -90,7 +95,7 @@ const Flex = Styled('label')(({ theme }) => ({
   display: 'flex'
 }));
 
-const Checkbox: React.FC<IProps> = ({ checked: propChecked, disabled }) => {
+const Checkbox: React.FC<IPropsOuter> = ({ checked: propChecked, disabled, label }) => {
   const [checked, setChecked] = useState(propChecked);
   return (
     <Flex role="checkbox">
@@ -102,7 +107,7 @@ const Checkbox: React.FC<IProps> = ({ checked: propChecked, disabled }) => {
         disabled={disabled}
       />
       <Label checked={checked} disabled={disabled}>
-        Label
+        {label}
       </Label>
     </Flex>
   );

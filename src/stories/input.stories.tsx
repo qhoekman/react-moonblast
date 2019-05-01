@@ -42,7 +42,11 @@ storiesOf('Inputs', module)
     'Checkbox control',
     () => (
       <div style={{ width: 300 }}>
-        <CheckboxControl checked={boolean('checked', true)} disabled={boolean('disabled', false)} />
+        <CheckboxControl
+          checked={boolean('checked', true)}
+          disabled={boolean('disabled', false)}
+          label={text('label', 'Label')}
+        />
       </div>
     ),
     {
