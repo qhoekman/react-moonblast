@@ -1,6 +1,5 @@
+import { Styled } from '@style/Styled';
 import React from 'react';
-
-import { Styled } from '../Styled';
 
 type Size = 'sm' | 'md' | 'lg';
 

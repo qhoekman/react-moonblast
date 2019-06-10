@@ -1,7 +1,6 @@
+import { Styled } from '@style/Styled';
 import React, { InputHTMLAttributes, useState } from 'react';
 import { Color } from 'react-tailwhip/dist/theme';
-
-import { Styled } from '../Styled';
 
 interface IProps {
   color?: Color;

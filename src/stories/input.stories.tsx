@@ -1,13 +1,13 @@
-import { boolean, select, text } from '@storybook/addon-knobs';
+import CheckboxControl from '@data-controls/CheckboxControl';
+import { InputControl } from '@data-controls/InputControl';
+import InputNumber from '@data-controls/InputNumberControl';
+import RadioControl from '@data-controls/RadioControl';
+import { TextareaControl } from '@data-controls/TextareaControl';
+import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import Theme from 'react-tailwhip';
 import { Color } from 'react-tailwhip/dist/theme';
-
-import CheckboxControl from '../inputs/CheckboxControl';
-import { InputControl } from '../inputs/InputControl';
-import RadioControl from '../inputs/RadioControl';
-import { TextareaControl } from '../inputs/TextareaControl';
 
 const Colors = Object.keys(Theme.colors) as Color[];
 
@@ -47,6 +47,17 @@ storiesOf('Inputs', module)
           disabled={boolean('disabled', false)}
           label={text('label', 'Label')}
         />
+      </div>
+    ),
+    {
+      info: { inline: true }
+    }
+  )
+  .add(
+    'InputNumber control',
+    () => (
+      <div style={{ width: 300 }}>
+        <InputNumber disabled={boolean('disabled', false)} value={number('number', 0)} />
       </div>
     ),
     {

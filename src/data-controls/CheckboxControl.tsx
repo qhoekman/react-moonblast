@@ -1,6 +1,5 @@
+import { Styled } from '@style/Styled';
 import React, { useEffect, useState } from 'react';
-
-import { Styled } from '../Styled';
 
 interface IPropsOuter extends IPropsInner {
   label: string;

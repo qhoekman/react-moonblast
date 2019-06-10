@@ -1,10 +1,9 @@
+import PrimaryButton from '@base/buttons/PrimaryButton';
+import TertiaryButton from '@base/buttons/TertiaryButton';
+import { Styled } from '@style/Styled';
 import React from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Color } from 'react-tailwhip/dist/theme';
-
-import PrimaryButton from '../buttons/PrimaryButton';
-import TertiaryButton from '../buttons/TertiaryButton';
-import { Styled } from '../Styled';
 
 interface IProps {
   parent: string;

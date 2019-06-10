@@ -1,5 +1,5 @@
-import { Styled } from '../Styled';
-import SecondaryButton from './SecondaryButton';
+import SecondaryButton from '@base/buttons/SecondaryButton';
+import { Styled } from '@style/Styled';
 
 const TertiaryButton = Styled(SecondaryButton)(({ theme }) => ({
   border: 0,

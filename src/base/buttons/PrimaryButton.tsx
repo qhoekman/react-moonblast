@@ -1,8 +1,7 @@
+import { Styled } from '@style/Styled';
 import { darken, desaturate, lighten } from 'polished';
 import React from 'react';
 import { Color } from 'react-tailwhip/dist/theme';
-
-import { Styled } from '../Styled';
 
 export type Round = 'sm' | 'md' | 'full';
 interface IProps {

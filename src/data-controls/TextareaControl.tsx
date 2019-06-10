@@ -1,7 +1,7 @@
+import { Styled } from '@style/Styled';
 import { InputHTMLAttributes, TextareaHTMLAttributes, useState } from 'react';
 import React from 'react';
 
-import { Styled } from '../Styled';
 import { BaseInput } from './InputControl';
 
 const Container = Styled(BaseInput)(({ theme }) => ({

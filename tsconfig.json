@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +14,17 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "rootDir": "src"
+    "rootDir": "src",
+    "baseUrl": "src",
+    "paths": {
+      "@base/*": ["base/*"],
+      "@layout/*": ["layout/*"],
+      "@feedback/*": ["feedback/*"],
+      "@navigation/*": ["navigation/*"],
+      "@data-renderers/*": ["data-renderers/*"],
+      "@data-controls/*": ["data-controls/*"],
+      "@style/*": ["style/*"]
+    }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

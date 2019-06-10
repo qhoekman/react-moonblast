@@ -1,7 +1,6 @@
+import PrimaryButton from '@base/buttons/PrimaryButton';
+import { Styled } from '@style/Styled';
 import { desaturate, lighten } from 'polished';
-
-import { Styled } from '../Styled';
-import PrimaryButton from './PrimaryButton';
 
 const SecondaryButton = Styled(PrimaryButton)(
   ({ theme, color }) => ({
