@@ -11,7 +11,7 @@ import { Color } from 'react-tailwhip/dist/theme';
 
 const Colors = Object.keys(Theme.colors) as Color[];
 
-storiesOf('Inputs', module)
+storiesOf('Data Control', module)
   .add(
     'Input control',
     () => (
