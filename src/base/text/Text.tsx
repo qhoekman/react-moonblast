@@ -1,7 +1,9 @@
 import { Styled } from '@style/Styled';
 import React from 'react';
 
-interface IProps {
+type TextType = 'secondary' | 'warning' | 'danger' | '';
+
+export interface ITextProps {
   code?: boolean;
   delete?: boolean;
   disabled?: boolean;
@@ -9,9 +11,10 @@ interface IProps {
   mark?: boolean;
   strong?: boolean;
   underline?: boolean;
+  type?: TextType;
 }
 
-const Container = Styled<'span', IProps>('span')(
+const Container = Styled<'span', ITextProps>('span')(
   ({ theme }) => ({
     fontFamily: theme.fonts.sans
   }),
@@ -53,7 +56,17 @@ const Container = Styled<'span', IProps>('span')(
     underline && {
       textDecoration: 'underline',
       textDecorationSkipInk: 'auto'
-    }
+    },
+  ({ theme, type }) =>
+    (type === 'secondary' && {
+      color: theme.colors.secondary
+    }) ||
+    (type === 'warning' && {
+      color: theme.colors.orange
+    }) ||
+    (type === 'danger' && {
+      color: theme.colors.red
+    })
 );
 
 export default Container;
