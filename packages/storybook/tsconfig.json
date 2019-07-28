@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./lib"
+  },
+  "include": ["./src"],
+  "references": [
+    { "path": "../style" },
+    { "path": "../buttons" },
+    { "path": "../data-controls" },
+    { "path": "../layout" },
+    { "path": "../navigation" },
+    { "path": "../typography" }
+  ]
+}

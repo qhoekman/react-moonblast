@@ -1,0 +1,50 @@
+{
+  "name": "@moonblast/storybook",
+  "version": "0.0.0",
+  "description": "Storybook",
+  "author": "Quido <quido@qhoekman.nl>",
+  "homepage": "https://github.com/qhoekman/rototiller#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qhoekman/rototiller.git"
+  },
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "build-storybook"
+  },
+  "dependencies": {
+    "@moonblast/style": "0.0.0",
+    "@moonblast/buttons": "0.0.0",
+    "@moonblast/data-controls": "0.0.0",
+    "@moonblast/layout": "0.0.0",
+    "@moonblast/navigation": "0.0.0",
+    "@moonblast/typography": "0.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@storybook/addon-actions": "^5.1.3",
+    "@storybook/addon-info": "^5.1.3",
+    "@storybook/addon-knobs": "^5.1.3",
+    "@storybook/addon-links": "^5.1.3",
+    "@storybook/addons": "^5.1.3",
+    "@storybook/react": "^5.1.3",
+    "@types/storybook__addon-knobs": "^5.0.1",
+    "@types/storybook__react": "^4.0.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.5",
+    "react-docgen-typescript-loader": "^3.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/qhoekman/rototiller/issues"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "composite": true
+  },
+  "include": ["./src"],
+  "references": [
+    { "path": "../style/tsconfig.build.json" },
+    { "path": "../buttons/tsconfig.build.json" },
+    { "path": "../data-controls/tsconfig.build.json" },
+    { "path": "../layout/tsconfig.build.json" },
+    { "path": "../navigation/tsconfig.build.json" },
+    { "path": "../typography/tsconfig.build.json" }
+  ]
+}

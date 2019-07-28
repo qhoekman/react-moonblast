@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -11,20 +10,15 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
     "jsx": "preserve",
-    "rootDir": "src",
-    "baseUrl": "src",
+    "sourceMap": true,
+    "declaration": true,
+    "composite": true,
+    "baseUrl": "./src",
     "paths": {
-      "@base/*": ["base/*"],
-      "@layout/*": ["layout/*"],
-      "@feedback/*": ["feedback/*"],
-      "@navigation/*": ["navigation/*"],
-      "@data-renderers/*": ["data-renderers/*"],
-      "@data-controls/*": ["data-controls/*"],
-      "@style/*": ["style/*"]
+      "@moonblast/*": ["./*/src"]
     }
   },
-  "include": ["src"]
+  "compileOnSave": true,
+  "exclude": ["node_modules", "packages/**/lib"]
 }
