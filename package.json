@@ -2,6 +2,13 @@
   "name": "react-moonblast",
   "version": "0.1.0",
   "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "start": "lerna run start",
+    "build": "lerna run build",
+    "build:watch": "lerna run --parallel build:watch",
+    "clean": "rimraf packages/**/lib packages/**/tsconfig*.tsbuildinfo"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/css": "^10.0.12",
@@ -19,23 +26,10 @@
     "react-tailwhip": "^0.0.2",
     "typescript": "^3.5.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.1.3",
