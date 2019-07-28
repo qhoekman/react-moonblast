@@ -14,7 +14,7 @@ interface IProps {
 }
 const DefaultColor = 'transparent' as Color;
 
-const PrimaryButton = Styled<'a', IProps>('a')(
+export const PrimaryButton = Styled<'a', IProps>('a')(
   ({ theme, color, background = DefaultColor }) => ({
     backgroundColor: theme.colors[background],
     border: 0,
@@ -72,5 +72,3 @@ const PrimaryButton = Styled<'a', IProps>('a')(
     }
   }
 );
-
-export default PrimaryButton;

@@ -5,7 +5,7 @@ interface IProps {
   background: Color;
 }
 
-const Container = Styled<'div', IProps>('div')(({ theme, background }) => ({
+export const DiagonalHero = Styled<'div', IProps>('div')(({ theme, background }) => ({
   position: 'relative',
   backgroundColor: theme.colors.transparent,
   height: theme.height[48],
@@ -25,5 +25,3 @@ const Container = Styled<'div', IProps>('div')(({ theme, background }) => ({
     zIndex: 1
   }
 }));
-
-export default Container;

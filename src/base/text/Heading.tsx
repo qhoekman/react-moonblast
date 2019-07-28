@@ -1,4 +1,4 @@
-import Text, { ITextProps } from '@base/text/Text';
+import { ITextProps, Text } from '@base/text/Text';
 import { Styled } from '@style/Styled';
 import React from 'react';
 
@@ -9,9 +9,8 @@ interface IProps extends ITextProps {
 }
 const Container = Styled(Text)(({ theme }) => ({}));
 
-const Heading: React.SFC<IProps> = ({ level = 1, ...rest }) => {
+export const Heading: React.SFC<IProps> = ({ level = 1, ...rest }) => {
   const HeadingLeveled = Container.withComponent(`h${level}` as 'h1');
+
   return <HeadingLeveled {...rest} />;
 };
-
-export default Heading;

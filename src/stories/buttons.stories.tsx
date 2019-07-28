@@ -1,9 +1,9 @@
-import PrimaryButton, { Round } from '@base/buttons/PrimaryButton';
-import SecondaryButton from '@base/buttons/SecondaryButton';
-import TertiaryButton from '@base/buttons/TertiaryButton';
-import Heading from '@base/text/Heading';
-import Paragraph from '@base/text/Paragraph';
-import Text from '@base/text/Text';
+import { PrimaryButton, Round } from '@base/buttons/PrimaryButton';
+import { SecondaryButton } from '@base/buttons/SecondaryButton';
+import { TertiaryButton } from '@base/buttons/TertiaryButton';
+import { Heading } from '@base/text/Heading';
+import { Paragraph } from '@base/text/Paragraph';
+import { Text } from '@base/text/Text';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
@@ -12,7 +12,6 @@ import { Color } from 'react-tailwhip/dist/theme';
 
 const Colors = Object.keys(Theme.colors) as Color[];
 const Rounded = ['sm', 'md', 'full'] as Round[];
-const HeadingLevel = [1, 2, 3, 4, 5, 6];
 
 storiesOf('Base Components', module)
   .add(

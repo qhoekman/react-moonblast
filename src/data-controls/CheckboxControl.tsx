@@ -1,13 +1,13 @@
 import { Styled } from '@style/Styled';
-import React, { useEffect, useState } from 'react';
-
-interface IPropsOuter extends IPropsInner {
-  label: string;
-}
+import React, { useCallback, useEffect, useState } from 'react';
 
 interface IPropsInner {
   checked?: boolean;
   disabled?: boolean;
+}
+
+interface IPropsOuter extends IPropsInner {
+  label: string;
 }
 
 const Label = Styled<'span', IPropsInner>('span')(
@@ -94,7 +94,7 @@ const Flex = Styled('label')(({ theme }) => ({
   display: 'flex'
 }));
 
-const Checkbox: React.FC<IPropsOuter> = ({ checked: propChecked, disabled, label }) => {
+export const InputCheckbox: React.FC<IPropsOuter> = ({ checked: propChecked, disabled, label }) => {
   const [checked, setChecked] = useState(propChecked);
 
   useEffect(() => {
@@ -102,20 +102,18 @@ const Checkbox: React.FC<IPropsOuter> = ({ checked: propChecked, disabled, label
       setChecked(!propChecked);
     };
   }, [propChecked]);
+
+  const onChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(e => {
+    setChecked(e.target.checked);
+  }, []);
+
   return (
-    <Flex role="checkbox">
+    <Flex role='checkbox' aria-checked={checked}>
       <Control checked={checked} disabled={disabled} />
-      <OriginalControl
-        type="checkbox"
-        onChange={e => setChecked(e.target.checked)}
-        checked={checked}
-        disabled={disabled}
-      />
+      <OriginalControl type='checkbox' onChange={onChange} checked={checked} disabled={disabled} />
       <Label checked={checked} disabled={disabled}>
         {label}
       </Label>
     </Flex>
   );
 };
-
-export default Checkbox;

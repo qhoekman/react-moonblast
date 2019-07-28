@@ -1,15 +1,14 @@
+import { BaseInput } from '@data-controls/InputControl';
 import { Styled } from '@style/Styled';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FaMinus, FaPlus } from 'react-icons/fa';
-
-import { BaseInput } from './InputControl';
-
-interface IPropsOuter extends IPropsInner {
-  value?: number;
-}
 
 interface IPropsInner {
   disabled?: boolean;
+}
+
+interface IPropsOuter extends IPropsInner {
+  value?: number;
 }
 
 const Label = Styled<'span', IPropsInner>('span')(
@@ -72,25 +71,35 @@ const Container = Styled('div')(({ theme }) => ({
   position: 'relative'
 }));
 
-const InputNumber: React.FC<IPropsOuter> = ({ value: propValue = 0, disabled }) => {
+export const InputNumber: React.FC<IPropsOuter> = ({ value: propValue = 0, disabled }) => {
   const [value, setValue] = useState(propValue);
-
   useEffect(() => {
     return () => {
-      setValue(value);
+      setValue(propValue);
     };
+  }, [propValue]);
+
+  const decreaseClick = useCallback(() => {
+    setValue(value - 1);
   }, [value]);
+
+  const increaseClick = useCallback(() => {
+    setValue(value + 1);
+  }, [value]);
+
+  const onChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(e => {
+    setValue(parseInt(e.target.value));
+  }, []);
+
   return (
     <Container>
-      <Decrease disabled={disabled} onClick={e => setValue(0 - 1)}>
+      <Decrease disabled={disabled} onClick={decreaseClick}>
         <FaMinus />
       </Decrease>
-      <Increase disabled={disabled} onClick={e => setValue(0 + 1)}>
+      <Increase disabled={disabled} onClick={increaseClick}>
         <FaPlus />
       </Increase>
-      <Control type="number" disabled={disabled} value={value} />
+      <Control type='number' disabled={disabled} value={value} onChange={onChange} />
     </Container>
   );
 };
-
-export default InputNumber;

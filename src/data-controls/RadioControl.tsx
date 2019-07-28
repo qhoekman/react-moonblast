@@ -1,13 +1,14 @@
 import { Styled } from '@style/Styled';
-import React, { useEffect, useState } from 'react';
-
-interface IPropsOuter extends IPropsInner {
-  label: string;
-}
+import React, { useCallback, useEffect, useState } from 'react';
 
 interface IPropsInner {
   checked?: boolean;
   disabled?: boolean;
+}
+
+interface IPropsOuter extends IPropsInner {
+  label: string;
+  name: string;
 }
 
 const Label = Styled<'span', IPropsInner>('span')(
@@ -92,7 +93,7 @@ const Flex = Styled('label')(({ theme }) => ({
   display: 'flex'
 }));
 
-const Radio: React.FC<IPropsOuter> = ({ checked: propChecked, disabled, label }) => {
+export const InputRadio: React.FC<IPropsOuter> = ({ checked: propChecked, disabled, label, name }) => {
   const [checked, setChecked] = useState(propChecked);
 
   useEffect(() => {
@@ -100,20 +101,18 @@ const Radio: React.FC<IPropsOuter> = ({ checked: propChecked, disabled, label })
       setChecked(!propChecked);
     };
   }, [propChecked]);
+
+  const onChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(e => {
+    setChecked(e.target.checked);
+  }, []);
+
   return (
-    <Flex role="radio">
+    <Flex role='radio' aria-checked={checked}>
       <Control checked={checked} disabled={disabled} />
-      <OriginalControl
-        type="radio"
-        onChange={e => setChecked(e.target.checked)}
-        checked={checked}
-        disabled={disabled}
-      />
+      <OriginalControl type='radio' name={name} onChange={onChange} checked={checked} disabled={disabled} />
       <Label checked={checked} disabled={disabled}>
         {label}
       </Label>
     </Flex>
   );
 };
-
-export default Radio;

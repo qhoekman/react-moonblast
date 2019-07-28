@@ -1,23 +1,19 @@
+import { BaseInput } from '@data-controls/InputControl';
 import { Styled } from '@style/Styled';
-import { InputHTMLAttributes, TextareaHTMLAttributes, useState } from 'react';
-import React from 'react';
-
-import { BaseInput } from './InputControl';
+import React, { InputHTMLAttributes, TextareaHTMLAttributes, useCallback, useState } from 'react';
 
 const Container = Styled(BaseInput)(({ theme }) => ({
   resize: 'none',
   fontFamily: theme.fonts.sans
 }));
-// TODO don't know what typing to use here
-const Textarea: any = Container.withComponent('textarea');
-export const TextareaControl: React.FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = props => {
+const Textarea: React.FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = Container.withComponent('textarea');
+export const InputTextarea: React.FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = props => {
   const { value: propValue, ...rest } = props;
   const [value, setValue] = useState(propValue);
-  return (
-    <Textarea
-      onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value)}
-      value={value}
-      {...rest}
-    />
-  );
+
+  const onChange: React.ChangeEventHandler<HTMLTextAreaElement> = useCallback(e => {
+    setValue(e.target.value);
+  }, []);
+
+  return <Textarea onChange={onChange} value={value} {...rest} />;
 };

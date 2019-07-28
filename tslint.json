@@ -1,0 +1,40 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-microsoft-contrib", "tslint-config-prettier", "tslint-react"],
+  "jsRules": {},
+  "rules": {
+    "export-name": false,
+    "import-name": false,
+    "no-consecutive-blank-lines": true,
+    "no-console": true,
+    "no-default-export": false,
+    "no-import-side-effect": false,
+    "no-implicit-dependencies": false,
+    "no-relative-imports": true,
+    "no-var-requires": true,
+    "no-unused-expression": true,
+    "no-unused-variable": true,
+    "no-submodule-imports": false,
+    "react-no-dangerous-html": false,
+    "ordered-imports": false,
+    "strict-boolean-expressions": false,
+    "quotemark": [true, "single"],
+    "semicolon": true,
+    "typedef": [true, "parameter", "property-declaration"],
+    "variable-name": false,
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-rest-spread",
+      "check-type",
+      "check-typecast",
+      "check-type-operator",
+      "check-preblock"
+    ]
+  },
+  "rulesDirectory": []
+}

@@ -1,8 +1,8 @@
-import CheckboxControl from '@data-controls/CheckboxControl';
+import { InputCheckbox } from '@data-controls/CheckboxControl';
 import { InputControl } from '@data-controls/InputControl';
-import InputNumber from '@data-controls/InputNumberControl';
-import RadioControl from '@data-controls/RadioControl';
-import { TextareaControl } from '@data-controls/TextareaControl';
+import { InputNumber } from '@data-controls/InputNumberControl';
+import { InputRadio } from '@data-controls/RadioControl';
+import { InputTextarea } from '@data-controls/TextareaControl';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
@@ -31,7 +31,7 @@ storiesOf('Inputs', module)
     'Textarea control',
     () => (
       <div style={{ width: 300 }}>
-        <TextareaControl value={text('label', 'Hello world')} />
+        <InputTextarea value={text('label', 'Hello world')} />
       </div>
     ),
     {
@@ -42,7 +42,7 @@ storiesOf('Inputs', module)
     'Checkbox control',
     () => (
       <div style={{ width: 300 }}>
-        <CheckboxControl
+        <InputCheckbox
           checked={boolean('checked', true)}
           disabled={boolean('disabled', false)}
           label={text('label', 'Label')}
@@ -68,7 +68,14 @@ storiesOf('Inputs', module)
     'Radio control',
     () => (
       <div style={{ width: 300 }}>
-        <RadioControl
+        <InputRadio
+          name={'choose'}
+          checked={boolean('checked', false)}
+          disabled={boolean('disabled', false)}
+          label={text('label', 'Label')}
+        />
+        <InputRadio
+          name={'choose'}
           checked={boolean('checked', false)}
           disabled={boolean('disabled', false)}
           label={text('label', 'Label')}

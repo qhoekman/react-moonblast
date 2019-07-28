@@ -8,7 +8,7 @@ interface IProps {
   rounded?: boolean;
 }
 
-const Container = Styled<'div', IProps>('div')(
+export const Paper = Styled<'div', IProps>('div')(
   ({ theme, elevation }) => ({
     backgroundColor: theme.colors.white,
     boxShadow: theme.shadows[elevation],
@@ -23,5 +23,3 @@ const Container = Styled<'div', IProps>('div')(
     }
   }
 );
-
-export default Container;

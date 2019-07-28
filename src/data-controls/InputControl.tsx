@@ -1,5 +1,5 @@
 import { Styled } from '@style/Styled';
-import React, { InputHTMLAttributes, useState } from 'react';
+import React, { InputHTMLAttributes, useCallback, useState } from 'react';
 import { Color } from 'react-tailwhip/dist/theme';
 
 interface IProps {
@@ -63,9 +63,14 @@ const Group = Styled<'div', IProps>('div')(
 export const InputControl: React.FC<IProps & InputHTMLAttributes<HTMLInputElement>> = props => {
   const { color, outlined, value: propValue, ...rest } = props;
   const [value, setValue] = useState(propValue);
+
+  const onChange: React.ChangeEventHandler<HTMLInputElement> = useCallback(e => {
+    setValue(e.target.value);
+  }, []);
+
   return (
     <Group color={color} outlined={outlined}>
-      <BaseInput color={color} onChange={e => setValue(e.target.value)} value={value} outlined={outlined} {...rest} />
+      <BaseInput color={color} onChange={onChange} value={value} outlined={outlined} {...rest} />
     </Group>
   );
 };

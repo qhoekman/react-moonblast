@@ -1,11 +1,8 @@
-import DiagonalHero from '@layout/DiagonalHero';
-import Paper from '@layout/Paper';
+import { DiagonalHero } from '@layout/DiagonalHero';
+import { Paper } from '@layout/Paper';
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import Theme from 'react-tailwhip';
-
-const Colors = Object.keys(Theme.colors);
 
 storiesOf('Layout', module)
   .add(

@@ -14,7 +14,7 @@ export interface ITextProps {
   type?: TextType;
 }
 
-const Container = Styled<'span', ITextProps>('span')(
+export const Text = Styled<'span', ITextProps>('span')(
   ({ theme }) => ({
     fontFamily: theme.fonts.sans
   }),
@@ -68,5 +68,3 @@ const Container = Styled<'span', ITextProps>('span')(
       color: theme.colors.red
     })
 );
-
-export default Container;
