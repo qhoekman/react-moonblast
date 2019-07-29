@@ -95,6 +95,7 @@ storiesOf('Data Control', module)
       <Rate
         count={number('count', 5)}
         defaultValue={3.5}
+        color={select<Color>('color', Colors, 'yellowLight')}
         character={Icons[componentName]}
         disabled={boolean('disabled', false)}
         allowClear={boolean('allowClear', true)}
