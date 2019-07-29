@@ -128,6 +128,7 @@ export const Rate: React.FC<IProps> = props => {
         ref={ratings[index]}
         index={index}
         count={count}
+        bgColor={bgColor}
         character={character}
         disabled={disabled}
         allowHalf={allowHalf}

@@ -1,5 +1,6 @@
 import { Styled } from '@moonblast/style';
 import React, { ReactElement, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { Color } from 'react-tailwhip/dist/theme';
 
 interface IProps {
   value: number;
@@ -7,6 +8,7 @@ interface IProps {
   allowHalf?: boolean;
   disabled?: boolean;
   focused?: boolean;
+  bgColor?: Color;
   count: number;
   character: React.ReactNode;
   forwardedRef?: any;
@@ -19,6 +21,7 @@ interface ICharacterProps {
   filled?: boolean;
   half?: boolean;
   active?: boolean;
+  bgColor: Color;
 }
 
 const Item = Styled('li')(({ theme }) => ({
@@ -33,13 +36,13 @@ const Item = Styled('li')(({ theme }) => ({
   }
 }));
 
-const RatingFull = Styled<'div', ICharacterProps>('div')(({ theme, filled, half }) => ({
-  color: filled ? 'inherit' : theme.colors.greyLight,
+const RatingFull = Styled<'div', ICharacterProps>('div')(({ theme, filled, bgColor }) => ({
+  color: filled ? 'inherit' : theme.colors[bgColor],
   userSelect: 'none',
   transition: 'all .3s'
 }));
 
-const RatingHalf = Styled<'div', ICharacterProps>('div')(({ theme, half, filled }) => ({
+const RatingHalf = Styled<'div', ICharacterProps>('div')(({ theme, half, bgColor }) => ({
   position: 'absolute',
   top: 0,
   left: 0,
@@ -47,7 +50,7 @@ const RatingHalf = Styled<'div', ICharacterProps>('div')(({ theme, half, filled 
   height: theme.height.full,
   overflow: 'hidden',
   opacity: half ? 1 : 0,
-  color: half ? 'inherit' : theme.colors.greyLight,
+  color: half ? 'inherit' : theme.colors[bgColor],
   userSelect: 'none',
   transition: 'all .3s'
 }));
@@ -63,7 +66,8 @@ const RatingComponent: React.FC<IProps> = props => {
     focused: defaultFocus,
     allowHalf,
     forwardedRef,
-    character
+    character,
+    bgColor = 'greyLight' as Color
   } = props;
   const [half, setHalf] = useState(false);
   const [active, setActive] = useState(false);
@@ -115,11 +119,11 @@ const RatingComponent: React.FC<IProps> = props => {
         onMouseMove={disabled ? undefined : onHoverHandler}
       >
         {allowHalf && (
-          <RatingHalf active={active} filled={filled} focused={focused} half={half}>
+          <RatingHalf active={active} filled={filled} focused={focused} half={half} bgColor={bgColor}>
             {character}
           </RatingHalf>
         )}
-        <RatingFull active={active} filled={filled} focused={focused} half={half}>
+        <RatingFull active={active} filled={filled} focused={focused} half={half} bgColor={bgColor}>
           {character}
         </RatingFull>
       </div>

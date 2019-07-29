@@ -96,6 +96,7 @@ storiesOf('Data Control', module)
         count={number('count', 5)}
         defaultValue={3.5}
         color={select<Color>('color', Colors, 'yellowLight')}
+        bgColor={select<Color>('bgColor', Colors, 'greyLight')}
         character={Icons[componentName]}
         disabled={boolean('disabled', false)}
         allowClear={boolean('allowClear', true)}
