@@ -1,4 +1,4 @@
-import { InputCheckbox, InputControl, InputNumber, InputRadio, InputTextarea } from '@moonblast/data-controls';
+import { InputCheckbox, InputControl, InputNumber, InputRadio, InputTextarea, Rate } from '@moonblast/data-controls';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
@@ -81,4 +81,13 @@ storiesOf('Data Control', module)
     {
       info: { inline: true }
     }
-  );
+  )
+  .add('Rate control', () => (
+    <Rate
+      count={number('count', 5)}
+      defaultValue={3.5}
+      disabled={boolean('disabled', false)}
+      allowClear={boolean('allowClear', true)}
+      allowHalf={boolean('allowHalf', true)}
+    />
+  ));
