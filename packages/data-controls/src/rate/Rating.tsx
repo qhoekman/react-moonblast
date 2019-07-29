@@ -1,6 +1,5 @@
 import { Styled } from '@moonblast/style';
 import React, { ReactElement, useCallback, useEffect, useImperativeHandle, useRef, useState } from 'react';
-import { FaStar, FaStarHalf } from 'react-icons/fa';
 
 interface IProps {
   value: number;
@@ -9,7 +8,7 @@ interface IProps {
   disabled?: boolean;
   focused?: boolean;
   count: number;
-  ref: any;
+  character: React.ReactNode;
   forwardedRef?: any;
   onClick(e: React.MouseEvent<HTMLDivElement>, index: number): void;
   onHover(e: React.MouseEvent<HTMLDivElement>, index: number): void;
@@ -30,12 +29,12 @@ const Item = Styled('li')(({ theme }) => ({
   cursor: 'pointer',
   transition: 'all .3s',
   '&:not(:last-child)': {
-    marginRight: theme.margin[2]
+    marginRight: theme.margin[1]
   }
 }));
 
 const RatingFull = Styled<'div', ICharacterProps>('div')(({ theme, filled, half }) => ({
-  color: filled ? theme.colors.yellowLight : theme.colors.greyLight,
+  color: filled ? 'inherit' : theme.colors.greyLight,
   userSelect: 'none',
   transition: 'all .3s'
 }));
@@ -48,13 +47,24 @@ const RatingHalf = Styled<'div', ICharacterProps>('div')(({ theme, half, filled 
   height: theme.height.full,
   overflow: 'hidden',
   opacity: half ? 1 : 0,
-  color: half ? theme.colors.yellowLight : theme.colors.greyLight,
+  color: half ? 'inherit' : theme.colors.greyLight,
   userSelect: 'none',
   transition: 'all .3s'
 }));
 
 const RatingComponent: React.FC<IProps> = props => {
-  const { disabled, count, value, index, onHover, onClick, focused: defaultFocus, allowHalf, forwardedRef } = props;
+  const {
+    disabled,
+    count,
+    value,
+    index,
+    onHover,
+    onClick,
+    focused: defaultFocus,
+    allowHalf,
+    forwardedRef,
+    character
+  } = props;
   const [half, setHalf] = useState(false);
   const [active, setActive] = useState(false);
   const [focused, setFocused] = useState(defaultFocus);
@@ -106,11 +116,11 @@ const RatingComponent: React.FC<IProps> = props => {
       >
         {allowHalf && (
           <RatingHalf active={active} filled={filled} focused={focused} half={half}>
-            <FaStarHalf />
+            {character}
           </RatingHalf>
         )}
         <RatingFull active={active} filled={filled} focused={focused} half={half}>
-          <FaStar />
+          {character}
         </RatingFull>
       </div>
     </Item>

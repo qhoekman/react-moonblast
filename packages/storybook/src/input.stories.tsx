@@ -2,6 +2,7 @@ import { InputCheckbox, InputControl, InputNumber, InputRadio, InputTextarea, Ra
 import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
+import { FaPoop, FaStar } from 'react-icons/fa';
 import Theme from 'react-tailwhip';
 import { Color } from 'react-tailwhip/dist/theme';
 
@@ -82,12 +83,22 @@ storiesOf('Data Control', module)
       info: { inline: true }
     }
   )
-  .add('Rate control', () => (
-    <Rate
-      count={number('count', 5)}
-      defaultValue={3.5}
-      disabled={boolean('disabled', false)}
-      allowClear={boolean('allowClear', true)}
-      allowHalf={boolean('allowHalf', true)}
-    />
-  ));
+  .add('Rate control', () => {
+    const Icons = {
+      Star: <FaStar />,
+      Poop: <FaPoop />,
+      Text: <>A</>
+    };
+    const componentName = select('character', Object.keys(Icons), 'Star');
+
+    return (
+      <Rate
+        count={number('count', 5)}
+        defaultValue={3.5}
+        character={Icons[componentName]}
+        disabled={boolean('disabled', false)}
+        allowClear={boolean('allowClear', true)}
+        allowHalf={boolean('allowHalf', true)}
+      />
+    );
+  });

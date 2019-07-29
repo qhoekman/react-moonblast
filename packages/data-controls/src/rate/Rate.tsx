@@ -1,21 +1,26 @@
 import { Styled } from '@moonblast/style';
 import React, { forwardRef, ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
+import { Color } from 'react-tailwhip/dist/theme';
 
 import { Rating } from './Rating';
 import { getOffsetLeft } from './utils';
 
-const Container = Styled('ul')(({ theme }) => ({
+const Container = Styled<'ul', { color: Color }>('ul')(({ theme, color }) => ({
   display: 'inline-block',
   outline: 'none',
   listStyle: 'none',
   padding: theme.padding[0],
   margin: theme.margin[0],
-  color: theme.colors.yellowLight
+  fontSize: theme.fontSizes.lg,
+  color: theme.colors[color]
 }));
 
 interface IProps {
   count: number;
+  character: React.ReactNode;
+  color?: Color;
+  bgColor?: Color;
   defaultValue?: number;
   disabled?: boolean;
   allowHalf?: boolean;
@@ -30,7 +35,19 @@ type HoverEvent = (e: React.MouseEvent, index: number) => void | null;
 
 // tslint:disable-next-line: max-func-body-length
 export const Rate: React.FC<IProps> = props => {
-  const { count, allowHalf = false, disabled, defaultValue = 0, onHoverChange, allowClear, onFocus, onBlur } = props;
+  const {
+    count,
+    allowHalf = false,
+    disabled,
+    defaultValue = 0,
+    onHoverChange,
+    allowClear,
+    onFocus,
+    onBlur,
+    color = 'yellowLight' as Color,
+    bgColor = 'greyLight' as Color,
+    character = '★'
+  } = props;
 
   const [value, setValue] = useState(defaultValue);
   const [actualValue, setActualValue] = useState();
@@ -111,6 +128,7 @@ export const Rate: React.FC<IProps> = props => {
         ref={ratings[index]}
         index={index}
         count={count}
+        character={character}
         disabled={disabled}
         allowHalf={allowHalf}
         value={hoverValue === undefined ? value : hoverValue}
@@ -124,6 +142,7 @@ export const Rate: React.FC<IProps> = props => {
 
   return (
     <Container
+      color={color}
       role='radiogroup'
       onMouseLeave={disabled ? undefined : onLeave}
       onFocus={disabled ? undefined : onFocusHandler}
