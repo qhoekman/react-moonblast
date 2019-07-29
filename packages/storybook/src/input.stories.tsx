@@ -87,6 +87,7 @@ storiesOf('Data Control', module)
     const Icons = {
       Star: <FaStar />,
       Poop: <FaPoop />,
+      Eggplant: <>🍆</>,
       Text: <>A</>
     };
     const componentName = select('character', Object.keys(Icons), 'Star');
