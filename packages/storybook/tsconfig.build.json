@@ -10,6 +10,7 @@
     { "path": "../style/tsconfig.build.json" },
     { "path": "../buttons/tsconfig.build.json" },
     { "path": "../data-controls/tsconfig.build.json" },
+    { "path": "../data-renderers/tsconfig.build.json" },
     { "path": "../layout/tsconfig.build.json" },
     { "path": "../navigation/tsconfig.build.json" },
     { "path": "../typography/tsconfig.build.json" }

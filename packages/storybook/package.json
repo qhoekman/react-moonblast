@@ -26,6 +26,7 @@
     "@moonblast/style": "0.0.0",
     "@moonblast/buttons": "0.0.0",
     "@moonblast/data-controls": "0.0.0",
+    "@moonblast/data-renderers": "0.0.0",
     "@moonblast/layout": "0.0.0",
     "@moonblast/navigation": "0.0.0",
     "@moonblast/typography": "0.0.0"

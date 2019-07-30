@@ -3773,13 +3773,6 @@ acorn@^6.0.1, acorn@^6.0.5, acorn@^6.0.7:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
   integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
 
-add-dom-event-listener@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/add-dom-event-listener/-/add-dom-event-listener-1.1.0.tgz#6a92db3a0dd0abc254e095c0f1dc14acbbaae310"
-  integrity sha512-WCxx1ixHT0GQU9hb0KI/mhgRQhnU+U3GvwY6ZvVjYq8rsihIGoaIOUbY0yMPBxLH5MDtr0kz3fisWGNcbWW7Jw==
-  dependencies:
-    object-assign "4.x"
-
 address@1.0.3, address@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/address/-/address-1.0.3.tgz#b5f50631f8d6cec8bd20c963963afb55e06cbce9"
@@ -4722,7 +4715,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@6.x, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -10241,11 +10234,6 @@ lodash-es@^4.17.11:
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.11.tgz#145ab4a7ac5c5e52a3531fb4f310255a152b4be0"
   integrity sha512-DHb1ub+rMjjrxqlB3H56/6MXtm1lSksDp2rA2cNWjG8mlDUYFhUj3Di2Zn5IwSU87xLv8tNIQ7sSwE/YOX/D/Q==
 
-lodash._getnative@^3.0.0:
-  version "3.9.1"
-  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
-  integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
-
 lodash._reinterpolate@^3.0.0, lodash._reinterpolate@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
@@ -10271,16 +10259,6 @@ lodash.get@^4.4.2:
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
-lodash.isarguments@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash.isarguments/-/lodash.isarguments-3.1.0.tgz#2f573d85c6a24289ff00663b491c1d338ff3458a"
-  integrity sha1-L1c9hcaiQon/AGY7SRwdM4/zRYo=
-
-lodash.isarray@^3.0.0:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
-  integrity sha1-eeTriMNqgSKvhvhEqpvNhRtfu1U=
-
 lodash.ismatch@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.ismatch/-/lodash.ismatch-4.4.0.tgz#756cb5150ca3ba6f11085a78849645f188f85f37"
@@ -10290,15 +10268,6 @@ lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
   integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
-
-lodash.keys@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
-  integrity sha1-TbwEcrFWvlCgsoaFXRvQsMZWCYo=
-  dependencies:
-    lodash._getnative "^3.0.0"
-    lodash.isarguments "^3.0.0"
-    lodash.isarray "^3.0.0"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -11357,7 +11326,7 @@ oauth-sign@~0.9.0:
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
 
-object-assign@4.1.1, object-assign@4.x, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
+object-assign@4.1.1, object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
@@ -13052,27 +13021,6 @@ raw-loader@^2.0.0:
     loader-utils "^1.1.0"
     schema-utils "^1.0.0"
 
-rc-rate@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/rc-rate/-/rc-rate-2.5.0.tgz#72d4984a03d0a7a0e6779c7a79efcea27626abf6"
-  integrity sha512-aXX5klRqbVZxvLghcKnLqqo7LvLVCHswEDteWsm5Gb7NBIPa1YKTcAbvb5SZ4Z4i4EeRoZaPwygRAWsQgGtbKw==
-  dependencies:
-    classnames "^2.2.5"
-    prop-types "^15.5.8"
-    rc-util "^4.3.0"
-    react-lifecycles-compat "^3.0.4"
-
-rc-util@^4.3.0:
-  version "4.8.4"
-  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.8.4.tgz#e7baa462ed2647bd478745a9aec7353c0944813a"
-  integrity sha512-1B2h0/pMXfSUBRAgPdoDIKK5XBuzLBuLI9rLwUEW163SPoDvfb9jmg3ymBPtzne2jWgwtdNw4j0vIq/8Yo849A==
-  dependencies:
-    add-dom-event-listener "^1.1.0"
-    babel-runtime "6.x"
-    prop-types "^15.5.10"
-    react-lifecycles-compat "^3.0.4"
-    shallowequal "^0.2.2"
-
 rc@^1.2.7:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
@@ -14365,13 +14313,6 @@ shallowequal@1.1.0, shallowequal@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
   integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
-
-shallowequal@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-0.2.2.tgz#1e32fd5bcab6ad688a4812cb0cc04efc75c7014e"
-  integrity sha1-HjL9W8q2rWiKSBLLDMBO/HXHAU4=
-  dependencies:
-    lodash.keys "^3.1.2"
 
 shebang-command@^1.2.0:
   version "1.2.0"
