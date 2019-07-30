@@ -17,7 +17,7 @@ storiesOf('Data Renderers', module).add(
       Clock: <FaRegClock />,
       Number: 5
     };
-    const componentName = select('count', Object.keys(Icons), 'Clock');
+    const componentName = select('count', Object.keys(Icons), 'Number');
     const Box = Styled('div')(({ theme }) => ({
       verticalAlign: 'middle',
       padding: `${theme.padding[3]} ${theme.padding[4]}`,
