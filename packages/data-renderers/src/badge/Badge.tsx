@@ -54,7 +54,7 @@ const Counter = Styled<typeof Dot, ICounterProps>(Dot)(({ theme, color, bgColor 
   lineHeight: theme.height[1],
   whiteSpace: 'nowrap',
   textAlign: 'center',
-  transform: 'translate(50%, -50%)'
+  transform: 'translate(50%, -75%)'
 }));
 
 const Count = Styled('span')(({ theme }) => ({

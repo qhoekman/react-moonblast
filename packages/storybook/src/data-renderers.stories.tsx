@@ -1,3 +1,4 @@
+import { PrimaryButton } from '@moonblast/buttons';
 import { Badge } from '@moonblast/data-renderers';
 import { Round, Styled } from '@moonblast/style';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
@@ -17,7 +18,7 @@ storiesOf('Data Renderers', module).add(
       Clock: <FaRegClock />,
       Number: 5
     };
-    const componentName = select('count', Object.keys(Icons), 'Clock');
+    const componentName = select('count', Object.keys(Icons), 'Number');
     const Box = Styled('div')(({ theme }) => ({
       verticalAlign: 'middle',
       padding: `${theme.padding[3]} ${theme.padding[4]}`,
@@ -36,7 +37,9 @@ storiesOf('Data Renderers', module).add(
           showZero={boolean('showZero', true)}
           overflowCount={number('overflowCount', 99)}
         >
-          <Box>{text('label', 'Hello world')}</Box>
+          <PrimaryButton color={'white'} background={'blue'}>
+            {text('label', 'Hello world')}
+          </PrimaryButton>
         </Badge>
       </div>
     );
