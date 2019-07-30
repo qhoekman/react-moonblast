@@ -9,6 +9,7 @@
     { "path": "../style" },
     { "path": "../buttons" },
     { "path": "../data-controls" },
+    { "path": "../data-renderers" },
     { "path": "../layout" },
     { "path": "../navigation" },
     { "path": "../typography" }
