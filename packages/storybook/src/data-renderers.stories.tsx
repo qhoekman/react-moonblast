@@ -38,7 +38,7 @@ storiesOf('Data Renderers', module).add(
           overflowCount={number('overflowCount', 99)}
         >
           <Box
-            color={select<Color>('boxColor', Colors, 'red')}
+            color={select<Color>('boxColor', Colors, 'white')}
             background={select<Color>('boxBgColor', Colors, 'blueDark')}
           >
             {text('label', 'Hello world')}
