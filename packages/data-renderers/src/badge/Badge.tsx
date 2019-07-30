@@ -34,7 +34,7 @@ const Dot = Styled<'span', ICounterProps>('span')(({ theme, color, bgColor }) =>
   backgroundColor: theme.colors[bgColor],
   borderRadius: theme.borderRadius.full,
   zIndex: theme.zIndex[10],
-  transform: 'translate(25%, -25%)',
+  transform: 'translate(25%, -125%)',
   transformOrigin: '100% 0%'
 }));
 
