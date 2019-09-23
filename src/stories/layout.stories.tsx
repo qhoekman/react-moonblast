@@ -4,6 +4,7 @@ import { Center, IntrinsicCenter } from '@layout/Center';
 import { Cluster } from '@layout/Cluster';
 import { Cover } from '@layout/Cover';
 import { DiagonalHero } from '@layout/DiagonalHero';
+import { Grid } from '@layout/Grid';
 import { Paper } from '@layout/Paper';
 import { Sidebar } from '@layout/Sidebar';
 import { Stack } from '@layout/Stack';
@@ -235,6 +236,64 @@ storiesOf('Layout', module)
 
 			<p style={{ textAlign: 'center' }}>What I Do?</p>
 		</Cover>
+	))
+	.add('Grid', () => (
+		<Grid
+			min={select<any>('columnWidth', widthValues, '16')}
+			gap={select<any>('gap', paddingValues, '4')}
+		>
+			<Box>
+				<Stack>
+					<img
+						src='https://images.unsplash.com/photo-1569156519861-5a63ce952934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+						width={150}
+						height={92}
+						alt='Shoes'
+						srcSet=''
+					/>
+					<h1>Hello World #1</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates inventore
+						reiciendis officiis quia sit dicta cumque tempora, laborum incidunt sunt esse illum enim
+						molestias commodi corporis consequuntur harum laboriosam?
+					</p>
+				</Stack>
+			</Box>
+			<Box>
+				<Stack>
+					<img
+						src='https://images.unsplash.com/photo-1569156519861-5a63ce952934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+						width={150}
+						height={92}
+						alt='Shoes'
+						srcSet=''
+					/>
+					<h1>Hello World #2</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates inventore
+						reiciendis officiis quia sit dicta cumque tempora, laborum incidunt sunt esse illum enim
+						molestias commodi corporis consequuntur harum laboriosam?
+					</p>
+				</Stack>
+			</Box>
+			<Box>
+				<Stack>
+					<img
+						src='https://images.unsplash.com/photo-1569156519861-5a63ce952934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+						width={150}
+						height={92}
+						alt='Shoes'
+						srcSet=''
+					/>
+					<h1>Hello World #3</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates inventore
+						reiciendis officiis quia sit dicta cumque tempora, laborum incidunt sunt esse illum enim
+						molestias commodi corporis consequuntur harum laboriosam?
+					</p>
+				</Stack>
+			</Box>
+		</Grid>
 	))
 	.add(
 		'Paper',
