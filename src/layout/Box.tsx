@@ -8,5 +8,5 @@ interface IProps {
 }
 
 export const Box = Styled<'div', IProps>('div')`
-  padding: ${({ theme, padding = 0 }) => theme.padding[`${padding}`]}
+  padding: ${({ theme, padding = '0' }) => theme.padding[`${padding}`]}
 `;

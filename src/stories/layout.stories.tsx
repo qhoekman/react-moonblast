@@ -1,6 +1,7 @@
 import { PrimaryButton } from '@base/buttons/PrimaryButton';
 import { Box } from '@layout/Box';
 import { Center, IntrinsicCenter } from '@layout/Center';
+import { Cluster } from '@layout/Cluster';
 import { DiagonalHero } from '@layout/DiagonalHero';
 import { Paper } from '@layout/Paper';
 import { Stack } from '@layout/Stack';
@@ -8,6 +9,10 @@ import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
+import logo from '../../public/logo.png';
+
+const justifyValues = ['flex-start', 'flex-end', 'space-between', 'stretch', 'center'];
+const paddingValues = [0, 1, 2, 3, 4, 6, 8, 10, 12];
 storiesOf('Layout', module)
 	.add(
 		'Diagonal Hero',
@@ -32,7 +37,7 @@ storiesOf('Layout', module)
 		{ info: { inline: true } }
 	)
 	.add('Box', () => (
-		<Box padding={select<number>('padding', [0, 1, 2, 3, 4, 6, 8, 10, 12], 0)}>
+		<Box padding={select<any>('padding', paddingValues, 0)}>
 			<Box>Head</Box>
 			<Box>Body</Box>
 		</Box>
@@ -70,6 +75,31 @@ storiesOf('Layout', module)
 				</Stack>
 			</Center>
 		</Box>
+	))
+	.add('Cluster', () => (
+		<Cluster
+			justify={select('First Justify', justifyValues, 'space-between')}
+			align={select('First Align', justifyValues, 'center')}
+			space={select<any>('First Spacing', paddingValues, 1)}
+		>
+			<div>
+				<img src={logo} alt='logo' height={64} />
+				<Cluster
+					justify={select('Second Justify', justifyValues, 'flex-end')}
+					align={select('Second Align', justifyValues, 'center')}
+					space={select<any>('Second Spacing', paddingValues, 1)}
+				>
+					<ul style={{ listStyle: 'none', padding: 0 }}>
+						<li>Layout</li>
+						<li>CSS</li>
+						<li>Web Design</li>
+						<li>Code</li>
+						<li>Front-end</li>
+						<li>Development</li>
+					</ul>
+				</Cluster>
+			</div>
+		</Cluster>
 	))
 	.add(
 		'Paper',
