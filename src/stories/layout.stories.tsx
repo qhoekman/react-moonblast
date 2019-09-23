@@ -212,7 +212,7 @@ storiesOf('Layout', module)
 	.add('Cover', () => (
 		<Cover
 			selector={text('selector', 'h1')}
-			minHeight={select('minHeight', heightValues, '92')}
+			minHeight={select<any>('minHeight', heightValues, '92')}
 			space={select<any>('space', paddingValues, '4')}
 			padding={select<any>('padding', paddingValues, '4')}
 		>
