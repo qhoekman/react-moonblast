@@ -6,6 +6,7 @@ import { DiagonalHero } from '@layout/DiagonalHero';
 import { Paper } from '@layout/Paper';
 import { Sidebar } from '@layout/Sidebar';
 import { Stack } from '@layout/Stack';
+import { Switcher } from '@layout/Switcher';
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
@@ -155,6 +156,39 @@ storiesOf('Layout', module)
 				</div>
 			</Sidebar>
 		</>
+	))
+	.add('Switcher', () => (
+		<Switcher
+			threshold={select<any>('threshold', widthValues, '128')}
+			space={select<any>('space', paddingValues, '4')}
+		>
+			<div>
+				<Box>
+					<h1>Hello World #1</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptates cupiditate
+						doloremque sapiente ea illo omnis molestias ipsa! Quis quam ipsa dolorum qui officia
+						incidunt illo maxime odit corporis iusto?
+					</p>
+				</Box>
+				<Box>
+					<h1>Hello World #2</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptates cupiditate
+						doloremque sapiente ea illo omnis molestias ipsa! Quis quam ipsa dolorum qui officia
+						incidunt illo maxime odit corporis iusto?
+					</p>
+				</Box>
+				<Box>
+					<h1>Hello World #3</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptates cupiditate
+						doloremque sapiente ea illo omnis molestias ipsa! Quis quam ipsa dolorum qui officia
+						incidunt illo maxime odit corporis iusto?
+					</p>
+				</Box>
+			</div>
+		</Switcher>
 	))
 	.add(
 		'Paper',
