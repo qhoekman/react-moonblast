@@ -4,6 +4,7 @@ import { Center, IntrinsicCenter } from '@layout/Center';
 import { Cluster } from '@layout/Cluster';
 import { DiagonalHero } from '@layout/DiagonalHero';
 import { Paper } from '@layout/Paper';
+import { Sidebar } from '@layout/Sidebar';
 import { Stack } from '@layout/Stack';
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
@@ -12,7 +13,35 @@ import React from 'react';
 import logo from '../../public/logo.png';
 
 const justifyValues = ['flex-start', 'flex-end', 'space-between', 'stretch', 'center'];
-const paddingValues = [0, 1, 2, 3, 4, 6, 8, 10, 12];
+const paddingValues = ['0', '1', '2', '3', '4', '6', '8', '10', '12'];
+const widthValues = [
+	'1',
+	'2',
+	'3',
+	'4',
+	'6',
+	'8',
+	'10',
+	'12',
+	'16',
+	'24',
+	'32',
+	'48',
+	'64',
+	'92',
+	'128',
+	'1/2',
+	'1/3',
+	'2/3',
+	'1/4',
+	'3/4',
+	'1/5',
+	'2/5',
+	'3/5',
+	'4/5',
+	'1/6',
+	'5/6'
+];
 storiesOf('Layout', module)
 	.add(
 		'Diagonal Hero',
@@ -100,6 +129,31 @@ storiesOf('Layout', module)
 				</Cluster>
 			</div>
 		</Cluster>
+	))
+	.add('Sidebar', () => (
+		<>
+			<Sidebar
+				width={select<any>('width', widthValues, '32')}
+				space={select<any>('space', paddingValues, '1')}
+				noStretch={boolean('noStretch', false)}
+				side={select<any>('side', ['left', 'right'], 'left')}
+			>
+				<div>
+					<img
+						src='https://images.unsplash.com/photo-1569156519861-5a63ce952934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+						width={150}
+						height={92}
+						alt='Shoes'
+						srcSet=''
+					/>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates inventore
+						reiciendis officiis quia sit dicta cumque tempora, laborum incidunt sunt esse illum enim
+						molestias commodi corporis consequuntur harum laboriosam?
+					</p>
+				</div>
+			</Sidebar>
+		</>
 	))
 	.add(
 		'Paper',
