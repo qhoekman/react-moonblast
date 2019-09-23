@@ -1,10 +1,10 @@
+import { Box } from '@layout/Box';
 import { DiagonalHero } from '@layout/DiagonalHero';
 import { Paper } from '@layout/Paper';
+import { Stack } from '@layout/Stack';
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
-import { Stack } from '../layout/Stack';
 
 storiesOf('Layout', module)
 	.add(
@@ -29,6 +29,12 @@ storiesOf('Layout', module)
 		),
 		{ info: { inline: true } }
 	)
+	.add('Box', () => (
+		<Box padding={select<number>('padding', [0, 1, 2, 3, 4, 6, 8, 10, 12], 0)}>
+			<Box>Head</Box>
+			<Box>Body</Box>
+		</Box>
+	))
 	.add('Stack', () => (
 		<Stack
 			space={select<'sm' | 'lg'>('space', ['sm', 'lg'], 'sm')}
