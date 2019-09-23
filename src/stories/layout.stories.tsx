@@ -134,6 +134,7 @@ storiesOf('Layout', module)
 		<>
 			<Sidebar
 				width={select<any>('width', widthValues, '32')}
+				minWidth={select<any>('minWidth', widthValues, '1/2')}
 				space={select<any>('space', paddingValues, '1')}
 				noStretch={boolean('noStretch', false)}
 				side={select<any>('side', ['left', 'right'], 'left')}
