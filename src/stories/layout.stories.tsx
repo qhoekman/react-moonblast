@@ -1,4 +1,6 @@
+import { PrimaryButton } from '@base/buttons/PrimaryButton';
 import { Box } from '@layout/Box';
+import { Center, IntrinsicCenter } from '@layout/Center';
 import { DiagonalHero } from '@layout/DiagonalHero';
 import { Paper } from '@layout/Paper';
 import { Stack } from '@layout/Stack';
@@ -49,6 +51,25 @@ storiesOf('Layout', module)
 			</Stack>
 			<span>End</span>
 		</Stack>
+	))
+	.add('Center', () => (
+		<Box>
+			<Center text={boolean('text', false)}>
+				<Stack>
+					<h1>Hello World</h1>
+					<p>
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe quis quae expedita quia
+						soluta. Nisi dolorem ducimus sequi porro et nobis consequatur alias voluptates quaerat
+						at magni non, beatae maxime.
+					</p>
+					<IntrinsicCenter>
+						<PrimaryButton color='white' background={'blueDark'}>
+							Press me
+						</PrimaryButton>
+					</IntrinsicCenter>
+				</Stack>
+			</Center>
+		</Box>
 	))
 	.add(
 		'Paper',
