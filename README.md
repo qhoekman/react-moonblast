@@ -1,6 +1,6 @@
-
-
-![image](./public/logo.png)
+<center>
+  <img src="./public/logo.png" alt="Moonblast" />
+</center>
 
 # Moonblast
 
