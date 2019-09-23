@@ -2,12 +2,13 @@ import { PrimaryButton } from '@base/buttons/PrimaryButton';
 import { Box } from '@layout/Box';
 import { Center, IntrinsicCenter } from '@layout/Center';
 import { Cluster } from '@layout/Cluster';
+import { Cover } from '@layout/Cover';
 import { DiagonalHero } from '@layout/DiagonalHero';
 import { Paper } from '@layout/Paper';
 import { Sidebar } from '@layout/Sidebar';
 import { Stack } from '@layout/Stack';
 import { Switcher } from '@layout/Switcher';
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
@@ -42,6 +43,24 @@ const widthValues = [
 	'4/5',
 	'1/6',
 	'5/6'
+];
+const heightValues = [
+	'1',
+	'2',
+	'3',
+	'4',
+	'6',
+	'8',
+	'10',
+	'12',
+	'16',
+	'24',
+	'32',
+	'48',
+	'64',
+	'92',
+	'screen',
+	'full'
 ];
 storiesOf('Layout', module)
 	.add(
@@ -189,6 +208,33 @@ storiesOf('Layout', module)
 				</Box>
 			</div>
 		</Switcher>
+	))
+	.add('Cover', () => (
+		<Cover
+			selector={text('selector', 'h1')}
+			minHeight={select<any>('minHeight', heightValues, '92')}
+			space={select<any>('space', paddingValues, '4')}
+			padding={select<any>('padding', paddingValues, '4')}
+		>
+			<Cluster justify={'space-between'} align={'center'} space={'1'}>
+				<div>
+					<img src={logo} alt='logo' height={64} />
+					<Cluster justify={'flex-end'} align={'center'} space={'1'}>
+						<ul style={{ listStyle: 'none', padding: 0 }}>
+							<li>Layout</li>
+							<li>CSS</li>
+							<li>Web Design</li>
+							<li>Code</li>
+							<li>Front-end</li>
+							<li>Development</li>
+						</ul>
+					</Cluster>
+				</div>
+			</Cluster>
+			<h1 style={{ textAlign: 'center' }}>Welcome to my site, Visitor!</h1>
+
+			<p style={{ textAlign: 'center' }}>What I Do?</p>
+		</Cover>
 	))
 	.add(
 		'Paper',
