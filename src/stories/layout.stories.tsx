@@ -1,10 +1,10 @@
+import { Box } from '@layout/Box';
 import { DiagonalHero } from '@layout/DiagonalHero';
 import { Paper } from '@layout/Paper';
+import { Stack } from '@layout/Stack';
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-
-import { Box } from '../layout/Box';
 
 storiesOf('Layout', module)
 	.add(
@@ -34,6 +34,21 @@ storiesOf('Layout', module)
 			<Box>Head</Box>
 			<Box>Body</Box>
 		</Box>
+	))
+	.add('Stack', () => (
+		<Stack
+			space={select<'sm' | 'lg'>('space', ['sm', 'lg'], 'sm')}
+			recursive={boolean('recursive', false)}
+		>
+			<span>Begin</span>
+			<Stack>
+				<span>Content</span>
+			</Stack>
+			<Stack>
+				<span>Content</span>
+			</Stack>
+			<span>End</span>
+		</Stack>
 	))
 	.add(
 		'Paper',
