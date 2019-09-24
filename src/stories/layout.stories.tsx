@@ -4,12 +4,13 @@ import { Center, IntrinsicCenter } from '@layout/Center';
 import { Cluster } from '@layout/Cluster';
 import { Cover } from '@layout/Cover';
 import { DiagonalHero } from '@layout/DiagonalHero';
+import { Frame } from '@layout/Frame';
 import { Grid } from '@layout/Grid';
 import { Paper } from '@layout/Paper';
 import { Sidebar } from '@layout/Sidebar';
 import { Stack } from '@layout/Stack';
 import { Switcher } from '@layout/Switcher';
-import { boolean, select, text } from '@storybook/addon-knobs';
+import { boolean, number, select, text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 
@@ -294,6 +295,49 @@ storiesOf('Layout', module)
 				</Stack>
 			</Box>
 		</Grid>
+	))
+	.add('Frame', () => (
+		<div
+			style={{
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center',
+				maxWidth: 768,
+				maxHeight: 512,
+				margin: '0 auto'
+			}}
+		>
+			<Box>
+				<Stack>
+					<Frame ratioX={number('Aspect Ratio X', 16)} ratioY={number('Aspect Ratio Y', 9)}>
+						<img
+							src='https://images.unsplash.com/photo-1569156519861-5a63ce952934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
+							alt='Shoes'
+							srcSet=''
+						/>
+					</Frame>
+					<h1>Hello World #3</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates inventore
+						reiciendis officiis quia sit dicta cumque tempora, laborum incidunt sunt esse illum enim
+						molestias commodi corporis consequuntur harum laboriosam?
+					</p>
+				</Stack>
+			</Box>
+			<Box>
+				<Stack>
+					<Frame ratioX={number('Aspect Ratio X', 16)} ratioY={number('Aspect Ratio Y', 9)}>
+						<video src='http://clips.vorwaerts-gmbh.de/VfE_html5.mp4' controls={true} />
+					</Frame>
+					<h1>Hello World #3</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum voluptates inventore
+						reiciendis officiis quia sit dicta cumque tempora, laborum incidunt sunt esse illum enim
+						molestias commodi corporis consequuntur harum laboriosam?
+					</p>
+				</Stack>
+			</Box>
+		</div>
 	))
 	.add(
 		'Paper',
